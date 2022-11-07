@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 
 const userRoutes = require('./routes/user');
+// const userSauces = require('./routes/sauces');
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_URL}`,
   { useNewUrlParser: true,
@@ -23,10 +24,8 @@ app.use((req, res, next) => {
     next();
 });
 
-// app.use((req, res) => {
-//     res.json({ message: 'Test blabla'});
-// });
 
 app.use('/api/auth', userRoutes);
+// app.use('/api/sauces', userSauces);
 
 module.exports = app;
