@@ -94,7 +94,6 @@ exports.likeSauces = (req, res, next) => {
     switch (like) {
         case 1:
             console.log({State: "Liked",like});
-            // if (req.auth.userId === req.body.userId) {};
             Sauce.updateOne({_id: req.params.id}, {$push: {usersLiked: userId}, $inc: {likes: +1}})
                 .then(() => {res.status(200).json({message: "Sauce likée"})})
                 .catch(error => res.status(403).json({error}));
