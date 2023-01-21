@@ -2,4 +2,6 @@ frontend/
 backend/node_modules/
 
 backend/.env
-backend/images/
+
+backend/images/*
+!backend/images/.gitkeep
