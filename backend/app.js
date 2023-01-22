@@ -17,7 +17,6 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS
 const app = express();
 
 // Parse JSON bodies, mandatory to handle data from request body
-// `app.use(express.json())` **before** your route handlers!
 app.use(express.json());
 
 app.use(cors());
